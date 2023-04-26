@@ -1,0 +1,18 @@
+{
+    "name": "bslm/tahdig-basic",
+    "description": "Basalamiha tahdig basic",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Bslm\\Tahdig\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "babakMoeinifar",
+            "email": "babakus7@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

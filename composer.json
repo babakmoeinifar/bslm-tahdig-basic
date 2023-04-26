@@ -14,12 +14,12 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
     "extra": {
         "laravel": {
             "providers": [
-                "Bslm\\Tahdig\\TahdigServiceProvider"
+                "Barryvdh\\Debugbar\\ServiceProvider"
             ]
         }
-    }
+    },
+    "require": {}
 }

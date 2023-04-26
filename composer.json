@@ -16,10 +16,9 @@
     "minimum-stability": "stable",
     "require": {},
     "extra": {
-    "laravel": {
-        "providers": [
-            "Bslm\\Tahdig\\TahdigServiceProvider"
-        ]
-    }
-},
+        "laravel": {
+            "providers": [
+                "Bslm\\Tahdig\\TahdigServiceProvider"
+            ]
+        }
 }

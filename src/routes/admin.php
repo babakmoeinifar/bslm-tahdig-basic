@@ -36,3 +36,20 @@ Route::group(['prefix' => 'admin/lunch', 'middleware' => 'web', 'namespace' => '
         });
     });
 });
+Route::group(['prefix' => 'admin', 'middleware' => 'web', 'namespace' => 'Bslm\Tahdig\Http\Controllers\Admin'], function () {
+    Route::group(['middleware' => 'auth'], function () {
+
+        Route::group(['prefix' => 'bills'], function () {
+            Route::get('/lunch-users', [C\BillController::class, 'lunchUsers']);
+            Route::get('/lunch-users-export', [C\BillController::class, 'lunchUserExport']);
+            Route::get('/restaurants', [C\BillController::class, 'restaurants']);
+            Route::get('/reset-tahdig', [C\BillController::class, 'resetTahdig']);
+            Route::post('/reset-tahdig', [C\BillController::class, 'resetTahdigSubmit']);
+            Route::get('/tahdig-logs', [C\TahdigLogsController::class, 'index']);
+            Route::get('/tahdig-logs/{userid}', [C\TahdigLogsController::class, 'index']);
+            Route::post('/tahdig-logs', [C\TahdigLogsController::class, 'logsSubmit']);
+            Route::get('/tahdig-logs/{userid}/{date_start}/{date_end}', [C\TahdigLogsController::class, 'logsSubmit']);
+            Route::get('/tahdig-logs-export', [C\TahdigLogsController::class, 'tahdigLogUserExcelExport']);
+        });
+    });
+});

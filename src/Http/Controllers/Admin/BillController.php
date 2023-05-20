@@ -186,7 +186,17 @@ class BillController extends Controller
     public function resetTahdig()
     {
 
-        $data['users'] = $data['users'] = UserController::getList();
+        $users = User::all();
+        $return = [];
+        foreach ($users as $user){
+            $return[] = [
+                'employeeId' => $user->employee_id,
+                'id' => $user->id,
+                'name' => $user->name
+            ];
+        }
+
+        $data['users'] = $return;
 
         return view('tahdig::admin.bill.reset-tahdig', ['data' => $data]);
     }

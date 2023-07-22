@@ -191,7 +191,7 @@ class LunchController extends Controller
             ->join('tahdig_restaurants', 'tahdig_restaurants.id', 'tahdig_foods.restaurant_id')
             ->join('cms_comments', 'cms_comments.commentable_id', 'tahdig_reservations.id')->groupBy('restaurant_id')
             ->where('cms_comments.commentable_type', \Bslm\Tahdig\Http\Models\TahdigReservation::class)
-            ->selectRaw('avg(comments.score) as score, foods.restaurant_id')
+            ->selectRaw('avg(cms_comments.score) as score, tahdig_foods.restaurant_id')
             ->get();
 
         return view('tahdig::admin.lunch.restaurant-all', $data);
